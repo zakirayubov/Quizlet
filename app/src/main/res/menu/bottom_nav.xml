@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainMenuIc"
+        android:icon="@drawable/ic_main_menu"
+        android:title=""/>
+
+    <item
+        android:id="@+id/createCardIc"
+        android:icon="@drawable/ic_create_card"
+        android:title=""/>
+
+    <item
+        android:id="@+id/ratingIc"
+        android:icon="@drawable/ic_raiting"
+        android:title=""/>
+
+    <item
+        android:id="@+id/prodileIc"
+        android:icon="@drawable/ic_profile"
+        android:title=""/>
+</menu>
