@@ -1,12 +1,14 @@
 package com.example.quizlet.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizlet.CoursePageActivity
 import com.example.quizlet.R
 import com.example.quizlet.model.Course
 
@@ -30,6 +32,11 @@ class CourseAdapter(var context: Context, var courses: MutableList<Course>) :
         holder.courseImage.setImageResource(imageId)
         holder.courseTitle.text = courses[position].title
         holder.courseLevel.text = courses[position].level
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, CoursePageActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
