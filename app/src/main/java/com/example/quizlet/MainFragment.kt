@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.quizlet.adapter.CourseAdapter
+import com.example.quizlet.model.Course
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +39,24 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        val view = inflater.inflate(R.layout.fragment_main, container, false)
+        setCourseRecycler(view)
+        return view
+    }
+
+    private fun setCourseRecycler(view: View) {
+        val courseRecycler: RecyclerView = view.findViewById(R.id.courseRecycler)
+
+        courseRecycler.layoutManager =
+            LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+
+        val courseList: MutableList<Course> = mutableListOf()
+        courseList.add(Course(1, "food", "Food", "2/3"))
+        courseList.add(Course(2, "animals", "Animals", "3/5"))
+        courseList.add(Course(3, "conversation", "Conversation", "3/3"))
+        courseList.add(Course(4, "colors", "Colors", "7/7"))
+
+        courseRecycler.adapter = CourseAdapter(requireContext(), courseList)
     }
 
     companion object {
