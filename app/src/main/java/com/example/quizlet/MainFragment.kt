@@ -45,6 +45,9 @@ class MainFragment : Fragment() {
         setCourseRecycler(view)
         levelChange(view)
 
+        val levelView: TextView = view.findViewById(R.id.levelTextView)
+        levelView.text = activity?.intent?.getStringExtra("levelNum") ?: "Level 1"
+
         return view
     }
 
