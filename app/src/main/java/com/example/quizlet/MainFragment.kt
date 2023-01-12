@@ -1,10 +1,12 @@
 package com.example.quizlet
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,8 +43,19 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main, container, false)
         setCourseRecycler(view)
+        levelChange(view)
+
         return view
     }
+
+    private fun levelChange(view: View) {
+        val levelTextView: TextView = view.findViewById(R.id.levelTextView)
+        levelTextView.setOnClickListener(View.OnClickListener {
+            val intent = Intent(activity, LevelActivity::class.java)
+            startActivity(intent)
+        })
+    }
+
 
     private fun setCourseRecycler(view: View) {
         val courseRecycler: RecyclerView = view.findViewById(R.id.courseRecycler)
