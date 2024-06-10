@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizlet.adapter.CourseAdapter
+import com.example.quizlet.adapter.LanguageAdapter
 import com.example.quizlet.model.Course
+import com.example.quizlet.model.Language
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,6 +76,21 @@ class MainFragment : Fragment() {
 
         courseRecycler.adapter = CourseAdapter(requireContext(), courseList)
     }
+
+ /*   private fun setLanguageRecycler(view: View) {
+        val languageRecycler: RecyclerView = view.findViewById(R.id.languageRecycler)
+
+         languageRecycler.layoutManager =
+            LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+
+        val languageList: MutableList<Language> = mutableListOf()
+        languageList.add(Language(1, "france", "French", "Level 1"))
+        languageList.add(Language(2, "spain", "Spanish", "Level 1"))
+        languageList.add(Language(3, "italian", "Italian", "Level 2"))
+        languageList.add(Language(4, "germany", "German", "Level 1"))
+
+        languageRecycler.adapter = LanguageAdapter(requireContext(), languageList)
+    }*/
 
     companion object {
         /**
